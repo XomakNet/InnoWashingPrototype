@@ -22,5 +22,8 @@
   },
   "msg_notification_created": {
     "en": "Ok, you will be notified, when your process is finished."
+  },
+  "msg_washing_started": {
+    "en": "Washing machine is unlocked. I will notify you, when washing is complete."
   }
 }
