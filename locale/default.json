@@ -1,1 +1,14 @@
-{}
+{
+  "msg_main_menu": {
+    "en": "Welcome to InnoWashing bot. With this bot you can: \n - Find free washing machine or drier \n - Get notified, when your washing or drying is finished."
+  },
+  "btn_free_equipment": {
+    "en": "Free equipment"
+  },
+  "btn_notify_me": {
+    "en": "Notify me"
+  },
+  "msg_free_equipment_main": {
+    "en": "Change this text"
+  }
+}
