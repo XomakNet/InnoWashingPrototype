@@ -21,7 +21,7 @@ SETTINGS = {
         #   and stuff.
         # You don't need to dirt your code with a bunch of try..except
         #   blocks for every single api call you make if this option is ON.
-        'suppress_exceptions': True
+        'suppress_exceptions': False
     },
     'db_storage': {
         'type': 'disk',

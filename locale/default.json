@@ -5,9 +5,26 @@
   "btn_free_equipment": {
     "en": "Free equipment"
   },
+  "msg_request_laundry_id": {
+    "en": "Please, enter laundry identifier (e.g. 42 means 4th building 2nd floor)"
+  },
+
+  "status_occupied": {
+    "en": "occupied"
+  },
+
+  "status_free":{
+    "en": "free"
+  },
+
+  "msg_avail_equipment": {
+    "en": "Available equipment:"
+  },
+
   "btn_notify_me": {
     "en": "Notify me"
   },
+
   "msg_free_equipment_main": {
     "en": "Change this text"
   },
@@ -23,7 +40,40 @@
   "msg_notification_created": {
     "en": "Ok, you will be notified, when your process is finished."
   },
+
+  "msg_unexpected_laundry_id": {
+    "en" : "Unexpected laundry id"
+  },
+
   "msg_washing_started": {
     "en": "Washing machine is unlocked. I will notify you, when washing is complete."
+  },
+
+  "btn_notify_on_release_machine":{
+    "en": "Notify on release (washing machine)"
+  },
+
+  "btn_notify_on_release_drier":{
+    "en": "Notify on release (drier)"
+  },
+
+  "btn_nearest_machine":{
+    "en": "Nearest free washing machine"
+  },
+
+  "btn_nearest_drier":{
+    "en": "Nearest free drier"
+  },
+
+  "msg_notify_on_release":{
+    "en" : "Ok, you will be notified when equipment will be released"
+  },
+
+  "type_washing_machine":{
+    "en": "washing machine"
+  },
+
+  "type_drier":{
+    "en": "drier"
   }
 }
