@@ -9,7 +9,8 @@ __author__ = 'Xomak'
 
 
 if settings.SETTINGS['bot']['token'] is None:
-    settings.SETTINGS['bot']['token'] = os.environ.get('BOT_TOKEN')
+    token = os.environ.get('BOT_TOKEN')
+    settings.SETTINGS['bot']['token'] = token
 
 bot = botlab.BotLab(settings.SETTINGS)
 
