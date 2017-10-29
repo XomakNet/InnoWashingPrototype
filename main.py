@@ -113,6 +113,7 @@ def ready_to_wash_state(session, message):
         session.reply_message(session._("msg_washing_started"))
     else:
         session.reply_message("Okay.")
+    session.set_state("main_menu")
     session.reply_message(session._("msg_main_menu"), reply_markup=build_main_menu_keyboard(session))
 
 
@@ -132,6 +133,17 @@ def free_equipment_main_state(session, message):
         session.reply_message(session._("msg_main_menu"), reply_markup=build_main_menu_keyboard(session))
 
 
+@bot.message_handler(state='subscribe_on_laundry')
+def subscribe_on_laundry_state(session, message):
+    text = message.text
+    if text == session._("btn_yes"):
+        session.reply_message(session._("msg_reserved"))
+    else:
+        session.reply_message(session._("msg_notify_on_release"))
+    session.set_state("main_menu")
+    session.reply_message(session._("msg_main_menu"), reply_markup=build_main_menu_keyboard(session))
+
+
 @bot.message_handler(state='free_equipment_actions')
 def free_equipment_actions_state(session, message):
     if message.text == session._("btn_cancel"):
@@ -143,8 +155,13 @@ def free_equipment_actions_state(session, message):
         session.set_state("main_menu")
 
         if text == session._("btn_notify_on_release_machine") or \
-                        text == session._("btn_notify_on_release_machine"):
-            session.reply_message(session._("msg_notify_on_release"), reply_markup=build_main_menu_keyboard(session))
+                        text == session._("btn_notify_on_release_drier"):
+            session.set_state("subscribe_on_laundry")
+            kb = telebot.types.ReplyKeyboardMarkup(row_width=1)
+            kb.add(telebot.types.KeyboardButton(text=session._("btn_yes")))
+            kb.add(telebot.types.KeyboardButton(text=session._("btn_no")))
+            session.reply_message(session._("msg_ask_for_reserve"), reply_markup=kb)
+
         elif text == session._("btn_nearest_machine"):
             reply_msg = session._("msg_avail_equipment") + "\n\n"
             reply_msg += "431" + " " + session._("type_washing_machine") + " - " + session._("status_free") + "\n\n"

@@ -69,11 +69,27 @@
     "en" : "Ok, you will be notified when equipment will be released"
   },
 
+  "msg_ask_for_reserve":{
+    "en" : "Do you want to make a reservation? In this case you will be put in the queue, which has priority right to use the equipment."
+  },
+
   "type_washing_machine":{
     "en": "washing machine"
   },
 
   "type_drier":{
     "en": "drier"
+  },
+
+  "btn_yes": {
+    "en": "Yes"
+  },
+
+  "btn_no": {
+    "en": "No"
+  },
+
+  "msg_reserved": {
+    "en": "Okay. You will be notified, when it is your turn. Please, note, that you will have only 7 minutes to start washing in priority mode."
   }
 }
