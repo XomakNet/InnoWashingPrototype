@@ -29,7 +29,7 @@
     "en": "Change this text"
   },
   "msg_notify_me": {
-    "en": "Enter laundry id, which is a combination of building number, floor and order number. \nFor instance, for 2nd building 3rd floor, 3rd device (from the door) it is 233."
+    "en": "Enter equipment id, which is a combination of building number, floor and order number. \nFor instance, for 2nd building 3rd floor, 3rd device (from the door) it is 233."
   },
   "btn_cancel": {
     "en": "Cancel"
