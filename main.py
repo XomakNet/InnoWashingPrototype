@@ -119,18 +119,25 @@ def ready_to_wash_state(session, message):
 
 @bot.message_handler(state='free_equipment_main')
 def free_equipment_main_state(session, message):
-    try:
+    if message.text.isdigit():
         laundry_id = int(message.text)
-        session.set_state("free_equipment_actions")
 
-        reply_msg = session._("msg_avail_equipment") + "\n\n"
+        if laundry_id in global_memory["status"]:
+            session.set_state("free_equipment_actions")
 
-        reply_msg += get_machines_list_str(session, laundry_id)
+            reply_msg = session._("msg_avail_equipment") + "\n\n"
 
-        session.reply_message(reply_msg, reply_markup=build_free_equipment_notify_keybord(session))
-    except Exception:
-        session.reply_message("unexpected laundry id", reply_markup=build_free_equipment_notify_keybord(session))
-        session.reply_message(session._("msg_main_menu"), reply_markup=build_main_menu_keyboard(session))
+            reply_msg += get_machines_list_str(session, laundry_id)
+
+            session.reply_message(reply_msg, reply_markup=build_free_equipment_notify_keybord(session))
+        else:
+            session.set_state('free_equipment_main')
+            session.reply_message(session._("msg_unexpected_laundry_id"))
+    else:
+        session.set_state('free_equipment_main')
+        session.reply_message(session._("msg_id_number_error"))
+
+
 
 
 @bot.message_handler(state='subscribe_on_laundry')

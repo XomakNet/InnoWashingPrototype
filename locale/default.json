@@ -42,7 +42,11 @@
   },
 
   "msg_unexpected_laundry_id": {
-    "en" : "Unexpected laundry id"
+    "en" : "This laundry is temporarily unavailable. Please, enter another one."
+  },
+
+  "msg_id_number_error": {
+    "en" : "Identifier must contain only digits. Please, try again."
   },
 
   "msg_washing_started": {
